@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sell Your Guns for Cash in Louisville, KY | Gun Geek 502</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Oswald:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0a0a0b; --bg2:#121214; --panel:#161618;
+    --gold:#d4af37; --gold-lite:#f0d585; --gold-deep:#a87f1e;
+    --ink:#f4f1ea; --soft:#a39d92; --line:#26262a;
+    --goldgrad:linear-gradient(135deg,#f3d98a 0%,#d4af37 45%,#b8860b 100%);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.55;-webkit-font-smoothing:antialiased}
+  h1,h2,h3{font-family:'Anton','Oswald','Impact',sans-serif;font-weight:400;text-transform:uppercase;letter-spacing:.5px;line-height:.98}
+  .wrap{max-width:1160px;margin:0 auto;padding:0 24px}
+  a{text-decoration:none;color:inherit}
+  .gold-text{background:var(--goldgrad);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .eyebrow{font-family:'Oswald';font-weight:600;letter-spacing:4px;text-transform:uppercase;font-size:.82rem;color:var(--gold)}
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;border:none;border-radius:8px;font-weight:700;cursor:pointer;font-size:1.02rem;padding:16px 28px;transition:.15s;font-family:'Oswald';text-transform:uppercase;letter-spacing:.5px}
+  .gold{background:var(--goldgrad);color:#1a1206;box-shadow:0 6px 22px rgba(212,175,55,.25)}
+  .gold:hover{filter:brightness(1.08);transform:translateY(-1px)}
+  .ghost{background:transparent;color:var(--ink);border:1.5px solid #3a3a40}
+  .ghost:hover{border-color:var(--gold);color:var(--gold)}
+  /* icons */
+  .ic{width:1.1em;height:1.1em;stroke:currentColor;fill:none;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round;vertical-align:-.18em;flex:none}
+  .icon-lg{display:inline-flex;width:56px;height:56px;align-items:center;justify-content:center;border-radius:50%;background:rgba(212,175,55,.1);border:1px solid rgba(212,175,55,.32);color:var(--gold);margin-bottom:14px}
+  .icon-lg .ic{width:26px;height:26px;stroke-width:2}
+
+  /* HEADER */
+  header{position:sticky;top:0;z-index:40;background:rgba(10,10,11,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+  .nav{display:flex;align-items:center;justify-content:space-between;height:72px;gap:18px}
+  .logo{font-family:'Anton';font-size:1.5rem;letter-spacing:1px;color:#fff;white-space:nowrap}
+  .logo span{color:var(--gold)}
+  .navlinks{display:flex;gap:26px;margin-left:auto}
+  .navlinks a{font-family:'Oswald';font-weight:600;text-transform:uppercase;letter-spacing:1px;font-size:.86rem;color:#d8d2c7}
+  .navlinks a:hover{color:var(--gold)}
+  .nav .right{display:flex;align-items:center;gap:14px}
+  .nav .phone{color:#fff;font-family:'Oswald';font-weight:700;font-size:1.05rem;white-space:nowrap}
+  @media(max-width:880px){ .navlinks{display:none} }
+  @media(max-width:680px){ .nav .phone{display:none} }
+
+  /* HERO */
+  .hero{position:relative;overflow:hidden;padding:54px 0 0;
+    background:
+      radial-gradient(120% 90% at 85% 0%,rgba(212,175,55,.13),transparent 42%),
+      repeating-linear-gradient(60deg,rgba(212,175,55,.03) 0 1px,transparent 1px 28px),
+      var(--bg)}
+  .hero::before{content:'';position:absolute;top:0;left:0;width:130px;height:130px;background:var(--goldgrad);opacity:.2;clip-path:polygon(0 0,100% 0,0 100%);pointer-events:none}
+  .hero::after{content:'';position:absolute;bottom:0;right:0;width:150px;height:150px;background:var(--goldgrad);opacity:.2;clip-path:polygon(100% 0,100% 100%,0 100%);pointer-events:none}
+  .services-tag{font-family:'Oswald';font-weight:600;letter-spacing:2px;text-transform:uppercase;font-size:.9rem;color:#cdbf95}
+  .hgrid{position:relative;z-index:2;display:grid;grid-template-columns:1.1fr .95fr;gap:30px;align-items:stretch}
+  .hcol{align-self:center;padding:14px 0 60px}
+  .hero h1{font-size:5rem;color:#fff;margin:14px 0 4px}
+  .hero h1 .gt{display:block;font-size:3.1rem}
+  .hero .sub{font-size:1.15rem;color:#cfc9bd;max-width:480px;margin:18px 0 24px}
+  .selectrow{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:12px;max-width:540px}
+  select{flex:2;min-width:210px;padding:15px;border-radius:8px;border:1px solid #2c2c30;font-size:1.02rem;background:#1b1b1e;color:#fff;font-weight:600;font-family:'Inter'}
+  .selectrow .btn{flex:1;white-space:nowrap}
+  .ctas{display:flex;gap:12px;flex-wrap:wrap}
+  .note{font-size:.9rem;color:var(--soft);margin-top:14px}
+  .heroimg{position:relative;align-self:end;min-height:540px;display:flex;align-items:flex-end;justify-content:center;
+    background:radial-gradient(58% 62% at 50% 42%,rgba(212,175,55,.18),transparent 72%)}
+  .heroimg::after{content:'';position:absolute;left:8%;right:8%;bottom:0;height:40px;background:radial-gradient(60% 100% at 50% 100%,rgba(212,175,55,.28),transparent 75%);pointer-events:none}
+  .heroimg .photo{position:absolute;inset:0;background:url('dillon-hero.png') no-repeat bottom center;background-size:contain;z-index:2}
+  .heroimg .ph{position:relative;z-index:1;color:#615c54;font-family:'Oswald';text-transform:uppercase;letter-spacing:1px;font-size:.85rem;padding:60px 18px;text-align:center;border:1px dashed #3a342a;border-radius:12px;margin-bottom:30px}
+
+  /* GOLD TRUST BAR */
+  .goldbar{background:var(--goldgrad);position:relative;z-index:3}
+  .gbrow{display:flex;justify-content:center;align-items:center;flex-wrap:wrap;gap:46px;padding:20px 0}
+  .gbitem{display:flex;align-items:center;gap:10px;color:#1a1206;font-family:'Oswald';font-weight:700;text-transform:uppercase;letter-spacing:1px;font-size:1.02rem}
+  .gbitem .ic{width:24px;height:24px}
+
+  /* SECTIONS */
+  section.s{padding:80px 0}
+  .center{text-align:center}
+  .kicker{font-size:2.7rem;color:#fff}
+  .lead{color:var(--soft);max-width:580px;margin:14px auto 48px;font-size:1.05rem}
+
+  /* PHONE STRIP */
+  .phonestrip{text-align:center;padding:26px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--bg2)}
+  .phonestrip .num{font-family:'Anton';font-size:2.4rem;letter-spacing:1px}
+  .phonestrip small{display:block;color:var(--soft);font-family:'Oswald';letter-spacing:2px;text-transform:uppercase;font-size:.8rem;margin-bottom:4px}
+
+  /* CARDS */
+  .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:34px 26px;text-align:center;transition:.15s}
+  .card:hover{border-color:var(--gold-deep);transform:translateY(-3px)}
+  .card h3{font-size:1.2rem;color:#fff;margin:0 0 8px}
+  .card p{color:var(--soft);font-size:.95rem}
+
+  /* STEPS */
+  .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
+  .step{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:34px 24px;text-align:center}
+  .step .n{font-family:'Anton';font-size:2.4rem;background:var(--goldgrad);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .step h3{font-size:1.25rem;color:#fff;margin:8px 0 6px}
+  .step p{color:var(--soft);font-size:.95rem}
+
+  /* VIDEO */
+  .herovideo{position:relative;max-width:760px;margin:0 auto;aspect-ratio:16/9;border-radius:16px;overflow:hidden;border:1px solid #2f2a1c;box-shadow:0 26px 60px rgba(0,0,0,.6);background:linear-gradient(135deg,#1c1c20,#0c0c0e);display:flex;align-items:center;justify-content:center}
+  .herovideo::before{content:'';position:absolute;inset:0;background:repeating-linear-gradient(45deg,rgba(212,175,55,.04) 0 14px,transparent 14px 28px)}
+  .play{width:90px;height:90px;border-radius:50%;background:var(--goldgrad);display:flex;align-items:center;justify-content:center;box-shadow:0 10px 34px rgba(0,0,0,.6);cursor:pointer;z-index:2}
+  .play:hover{transform:scale(1.06)}
+  .play::before{content:'';border-left:30px solid #1a1206;border-top:18px solid transparent;border-bottom:18px solid transparent;margin-left:7px}
+  .vtag{position:absolute;top:14px;left:14px;background:rgba(0,0,0,.6);color:var(--gold);font-family:'Oswald';font-weight:700;font-size:.82rem;padding:6px 12px;border-radius:20px;z-index:2;letter-spacing:1px}
+  .vhint{position:absolute;bottom:16px;left:0;right:0;text-align:center;color:#7d776c;font-size:.85rem;z-index:2}
+
+  /* SEGMENTS */
+  .segs{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+  .seg{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:26px 18px;text-align:center;transition:.15s;color:inherit}
+  .seg:hover{border-color:var(--gold);background:#1c1a14}
+  .seg .icon-lg{width:48px;height:48px;margin-bottom:10px}
+  .seg .icon-lg .ic{width:22px;height:22px}
+  .seg h3{font-size:1rem;margin:0 0 6px;color:#fff}
+  .seg span{color:var(--gold);font-family:'Oswald';font-size:.82rem;font-weight:700;letter-spacing:.5px}
+
+  /* INVENTORY */
+  .inv{position:relative;overflow:hidden;background:linear-gradient(120deg,#161310,#0c0c0e);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .invrow{display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;padding:46px 0}
+  .invrow h2{font-size:2.1rem;color:#fff}
+  .invrow p{color:var(--soft);margin-top:8px;max-width:520px}
+
+  /* REVIEWS */
+  .reviewbox{max-width:680px;margin:0 auto;background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:40px 32px}
+  .reviewbox .stars{color:var(--gold);letter-spacing:5px;font-size:1.4rem}
+  .reviewbox p{color:#d8d2c7;font-size:1.1rem;margin:16px auto 22px;max-width:520px;font-style:italic}
+
+  /* FORM */
+  .formwrap{max-width:680px;margin:0 auto;background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:38px;text-align:left}
+  .frow{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:14px}
+  .field{flex:1;min-width:200px}
+  .field.full{flex-basis:100%}
+  .field label{display:block;font-family:'Oswald';text-transform:uppercase;letter-spacing:.5px;font-size:.78rem;color:#bdb6a8;margin-bottom:6px}
+  .field input,.field select{width:100%;padding:14px;border-radius:8px;border:1px solid #2c2c30;background:#0f0f11;color:#fff;font-size:1rem;font-family:'Inter'}
+  .field input[type=file]{padding:11px;color:#9a948a}
+  .req{color:var(--gold)}
+  .consent{display:flex;gap:10px;align-items:flex-start;margin:14px 0;font-size:.82rem;color:#9a948a;line-height:1.5}
+  .consent input{margin-top:3px;accent-color:var(--gold);flex:none}
+  .formwrap .btn{width:100%;margin-top:8px;font-size:1.1rem;padding:18px}
+  .formnote{text-align:center;color:var(--soft);font-size:.82rem;margin-top:14px}
+
+  /* FAQ */
+  .faq{max-width:760px;margin:0 auto}
+  details{border-bottom:1px solid var(--line);padding:20px 4px}
+  summary{font-family:'Oswald';text-transform:uppercase;letter-spacing:.5px;font-size:1.05rem;color:#fff;cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:14px}
+  summary::-webkit-details-marker{display:none}
+  summary::after{content:'+';color:var(--gold);font-size:1.5rem}
+  details[open] summary::after{content:'\2212'}
+  details p{color:var(--soft);margin-top:12px}
+
+  /* FINAL */
+  .final{position:relative;overflow:hidden;text-align:center;padding:88px 0;
+    background:radial-gradient(120% 120% at 50% 0%,rgba(212,175,55,.16),transparent 50%),var(--bg)}
+  .final h2{font-size:3.2rem;color:#fff;margin-bottom:8px}
+  .final p{color:#cfc9bd;margin-bottom:26px}
+  .final .ctas{justify-content:center}
+
+  /* FOOTER */
+  footer{background:#070708;color:#8c867b;font-size:.88rem;padding:40px 0 28px;border-top:1px solid var(--line)}
+  .fcols{display:flex;justify-content:space-between;flex-wrap:wrap;gap:24px;margin-bottom:26px}
+  .fcols .logo{font-size:1.3rem;margin-bottom:10px}
+  .fnav{display:flex;gap:20px;flex-wrap:wrap}
+  .fnav a:hover{color:var(--gold)}
+  .disc{font-size:.76rem;color:#6a655d;line-height:1.6;border-top:1px solid var(--line);padding-top:18px}
+  footer b{color:#cfc9bd}
+
+  /* sticky mobile */
+  .sticky{display:none;position:fixed;left:0;right:0;bottom:0;z-index:50;gap:8px;padding:9px;background:#0a0a0b;border-top:1px solid var(--gold-deep)}
+  .sticky .btn{flex:1;padding:14px 6px;font-size:.95rem}
+
+  @media(max-width:880px){
+    .hgrid{grid-template-columns:1fr;gap:24px}
+    .hero{padding:36px 0 0}
+    .hero h1{font-size:3.2rem}
+    .hero h1 .gt{font-size:2.1rem}
+    .heroimg{min-height:320px;order:2}
+    .grid3,.steps,.segs{grid-template-columns:1fr}
+    .segs{grid-template-columns:1fr 1fr}
+    .kicker,.final h2{font-size:2.1rem}
+    section.s{padding:54px 0}
+    .sticky{display:flex}
+    body{padding-bottom:66px}
+  }
+</style>
+</head>
+<body>
+
+<!-- Reusable SVG icon defs -->
+<svg style="display:none">
+  <defs>
+    <g id="i-shield"><path d="M12 2l8 3v6c0 5-3.5 8-8 11-4.5-3-8-6-8-11V5z"/></g>
+    <g id="i-shieldcheck"><path d="M12 2l8 3v6c0 5-3.5 8-8 11-4.5-3-8-6-8-11V5z"/><path d="M8.5 11.5l2.5 2.5 4.5-4.5"/></g>
+    <g id="i-clock"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></g>
+    <g id="i-thumb"><path d="M7 11v9H4a1 1 0 0 1-1-1v-7a1 1 0 0 1 1-1z"/><path d="M7 11l4-8a2 2 0 0 1 2 2v4h5.5a2 2 0 0 1 2 2.3l-1.2 6A2 2 0 0 1 17 20H7"/></g>
+    <g id="i-cash"><rect x="2" y="6" width="20" height="12" rx="2"/><circle cx="12" cy="12" r="2.5"/><path d="M6 9v6M18 9v6"/></g>
+    <g id="i-search"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></g>
+    <g id="i-gift"><path d="M20 12v9H4v-9"/><path d="M2 7h20v5H2z"/><path d="M12 22V7"/><path d="M12 7S11 2 7.5 2 4 5 4 5s.5 2 4 2"/><path d="M12 7s1-5 4.5-5S20 5 20 5s-.5 2-4 2"/></g>
+    <g id="i-scales"><path d="M12 3v18"/><path d="M5 7h14"/><path d="M5 7l-3 6a3 3 0 0 0 6 0z"/><path d="M19 7l-3 6a3 3 0 0 0 6 0z"/><path d="M8 21h8"/></g>
+    <g id="i-box"><path d="M21 8l-9-5-9 5 9 5 9-5z"/><path d="M3 8v8l9 5 9-5V8"/><path d="M12 13v8"/></g>
+    <g id="i-phone"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3-8.6A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.3 1.8.6 2.6a2 2 0 0 1-.5 2.1L8 9.6a16 16 0 0 0 6 6l1.2-1.2a2 2 0 0 1 2.1-.5c.8.3 1.7.5 2.6.6a2 2 0 0 1 1.7 2z"/></g>
+    <g id="i-chat"><path d="M21 11.5a8.5 8.5 0 0 1-12.5 7.5L3 21l2-5.5A8.5 8.5 0 1 1 21 11.5z"/></g>
+  </defs>
+</svg>
+
+<header>
+  <div class="wrap nav">
+    <div class="logo">GUN GEEK <span>502</span></div>
+    <nav class="navlinks">
+      <a href="#offer">Home</a>
+      <a href="https://armslist.com/store/13160/gun-geek-502" target="_blank" rel="noopener">Current Inventory</a>
+      <a href="/blog">Blog</a>
+      <a href="https://facebook.com/profile.php?id=61576962867131" target="_blank" rel="noopener">Facebook</a>
+    </nav>
+    <div class="right">
+      <a class="phone" href="tel:+15026391130">(502) 639-1130</a>
+      <a class="btn gold" href="#sell" style="padding:11px 20px;font-size:.9rem">Get Cash Offer</a>
+    </div>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="offer">
+  <div class="wrap hgrid">
+    <div class="hcol">
+      <div class="services-tag">Buy. Sell. Trade. Appraisals. Estate Sales.</div>
+      <h1>We Buy Guns.<span class="gt gold-text">Instant Cash Offers.</span></h1>
+      <p class="sub">Get same-day cash from a licensed Louisville FFL. Bring your gun and your ID, and you walk out paid.</p>
+      <div class="selectrow">
+        <select id="heroType" name="firearm_type" aria-label="What are you selling?">
+          <option>I'm not sure what I have</option>
+          <option>I inherited gun(s)</option>
+          <option>Handgun / Pistol</option>
+          <option>Rifle</option>
+          <option>Shotgun</option>
+          <option>AR-15 / AK</option>
+          <option>A whole collection</option>
+        </select>
+        <a class="btn gold" href="#sell">Get My Offer →</a>
+      </div>
+      <div class="ctas">
+        <a class="btn ghost" href="sms:+15026391130"><svg class="ic"><use href="#i-chat"/></svg> Text a Photo</a>
+        <a class="btn ghost" href="tel:+15026391130"><svg class="ic"><use href="#i-phone"/></svg> Call Dillon</a>
+      </div>
+      <div class="note">Free, with no obligation. Most offers go out within the hour.</div>
+    </div>
+    <div class="heroimg">
+      <div class="photo"></div>
+      <div class="ph">[ Dillon, arms crossed,<br>full height cutout<br>(dillon-hero.png) ]</div>
+    </div>
+  </div>
+</section>
+
+<!-- GOLD TRUST BAR -->
+<div class="goldbar">
+  <div class="wrap gbrow">
+    <div class="gbitem"><svg class="ic"><use href="#i-shield"/></svg> Licensed FFL</div>
+    <div class="gbitem"><svg class="ic"><use href="#i-clock"/></svg> Same-Day Cash</div>
+    <div class="gbitem"><svg class="ic"><use href="#i-thumb"/></svg> No Pressure</div>
+  </div>
+</div>
+
+<!-- BENEFITS -->
+<section class="s">
+  <div class="wrap center">
+    <h2 class="kicker">Why Sellers Choose <span class="gold-text">Gun Geek 502</span></h2>
+    <p class="lead">Safer than a private sale. Fairer than a pawn shop. And you deal with a real local guy, not a call center.</p>
+    <div class="grid3">
+      <div class="card"><span class="icon-lg"><svg class="ic"><use href="#i-cash"/></svg></span><h3>Same-Day Cash</h3><p>As a licensed FFL there's no waiting period. Accept the offer and you're paid on the spot.</p></div>
+      <div class="card"><span class="icon-lg"><svg class="ic"><use href="#i-search"/></svg></span><h3>Fast, Honest Appraisals</h3><p>We know real market value, and we show you the numbers. No lowballing, no games.</p></div>
+      <div class="card"><span class="icon-lg"><svg class="ic"><use href="#i-shieldcheck"/></svg></span><h3>Safe, Legal Process</h3><p>Every sale is documented and handled legally, so the gun's off your hands for good.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="s" style="background:var(--bg2)">
+  <div class="wrap center">
+    <h2 class="kicker">How It <span class="gold-text">Works</span></h2>
+    <p class="lead">Three easy steps, and most of it happens the same day.</p>
+    <div class="steps">
+      <div class="step"><div class="n">01</div><h3>Tell Us What You've Got</h3><p>Call, text, or fill out the form. Pictures help, but they're not required.</p></div>
+      <div class="step"><div class="n">02</div><h3>Get a Free Valuation</h3><p>We give you a fair offer with no obligation. No pressure to say yes.</p></div>
+      <div class="step"><div class="n">03</div><h3>Get Paid Fast</h3><p>If you accept, we handle all the paperwork and pay you on the spot.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- VIDEO -->
+<section class="s">
+  <div class="wrap center">
+    <h2 class="kicker" style="margin-bottom:36px">Meet <span class="gold-text">Dillon</span></h2>
+    <!-- Replace this placeholder with: <video controls poster="dillon-hero.png"><source src="dillon-video.mp4" type="video/mp4"></video> -->
+    <div class="herovideo">
+      <div class="play"></div>
+      <div class="vtag">▶ Meet Dillon</div>
+      <div class="vhint">[ Dillon's video goes here ]</div>
+    </div>
+  </div>
+</section>
+
+<!-- PHONE STRIP -->
+<div class="phonestrip">
+  <small>Call or Text Dillon</small>
+  <a class="num gold-text" href="tel:+15026391130">(502) 639-1130</a>
+</div>
+
+<!-- SEGMENTS -->
+<section class="s">
+  <div class="wrap center">
+    <h2 class="kicker">Whatever You're <span class="gold-text">Selling</span></h2>
+    <p class="lead">One gun or a hundred. For estates and big collections, we come to you.</p>
+    <div class="segs">
+      <a class="seg" href="#sell"><span class="icon-lg"><svg class="ic"><use href="#i-gift"/></svg></span><h3>Inherited a Gun</h3><span>Get an offer →</span></a>
+      <a class="seg" href="#sell"><span class="icon-lg"><svg class="ic"><use href="#i-scales"/></svg></span><h3>Settling an Estate</h3><span>Get an offer →</span></a>
+      <a class="seg" href="#sell"><span class="icon-lg"><svg class="ic"><use href="#i-box"/></svg></span><h3>A Collection</h3><span>Get an offer →</span></a>
+      <a class="seg" href="#sell"><span class="icon-lg"><svg class="ic"><use href="#i-cash"/></svg></span><h3>Need Cash Fast</h3><span>Get an offer →</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- INVENTORY -->
+<div class="inv">
+  <div class="wrap invrow">
+    <div>
+      <h2>Looking to <span class="gold-text">Buy or Trade?</span></h2>
+      <p>We do more than buy. Browse our current inventory of firearms for sale, or bring yours in to trade up.</p>
+    </div>
+    <a class="btn gold" href="https://armslist.com/store/13160/gun-geek-502" target="_blank" rel="noopener">Browse Current Inventory →</a>
+  </div>
+</div>
+
+<!-- REVIEWS -->
+<section class="s" style="background:var(--bg2)">
+  <div class="wrap center">
+    <h2 class="kicker">What Others Are <span class="gold-text">Saying</span></h2>
+    <p class="lead">We let our customers do the talking.</p>
+    <div class="reviewbox">
+      <div class="stars">★★★★★</div>
+      <p>"When you call or walk in, you get me. Not a call center, not a shipping label. I'll give you an honest number and treat you right." &mdash; Dillon, owner</p>
+      <a class="btn gold" href="https://facebook.com/profile.php?id=61576962867131" target="_blank" rel="noopener">Read Our Reviews on Facebook →</a>
+    </div>
+  </div>
+</section>
+
+<!-- LEAD FORM -->
+<section class="s" id="sell">
+  <div class="wrap center">
+    <h2 class="kicker">Sell Your <span class="gold-text">Guns</span></h2>
+    <p class="lead">Tell us what you have, and we'll get you a fair cash offer. Fast and free.</p>
+    <form class="formwrap" onsubmit="return false">
+      <div class="frow">
+        <div class="field"><label for="fname">First Name</label><input id="fname" name="first_name" type="text" placeholder="First name"></div>
+        <div class="field"><label for="lname">Last Name</label><input id="lname" name="last_name" type="text" placeholder="Last name"></div>
+      </div>
+      <div class="frow">
+        <div class="field"><label for="cell">Cellphone <span class="req">*</span></label><input id="cell" name="cell" type="tel" aria-required="true" required placeholder="(502) 555-0123"></div>
+        <div class="field"><label for="email">Email</label><input id="email" name="email" type="email" placeholder="you@email.com"></div>
+      </div>
+      <div class="field full"><label for="formType">What are you selling?</label>
+        <select id="formType" name="firearm_type">
+          <option>I'm not sure what I have</option>
+          <option>I inherited gun(s)</option>
+          <option>Handgun / Pistol</option>
+          <option>Rifle</option>
+          <option>Shotgun</option>
+          <option>AR-15 / AK</option>
+          <option>A whole collection</option>
+        </select>
+      </div>
+      <div class="field full" style="margin-top:14px"><label for="photo">Add a Photo (optional, it helps)</label><input id="photo" name="photo" type="file"></div>
+      <label class="consent"><input type="checkbox"> <span>I consent to receive SMS notifications, alerts, and occasional marketing messages from Gun Geek 502. Message frequency varies. Message and data rates may apply. Text HELP to (502) 639-1130 for help. Reply STOP to unsubscribe at any time.</span></label>
+      <label class="consent"><input type="checkbox"> <span>I consent to receive non marketing text messages from Gun Geek 502 LLC about order updates, appointment reminders, and similar. Message and data rates may apply.</span></label>
+      <button class="btn gold" type="submit">Get My Cash Offer</button>
+      <div class="formnote">No obligation, and we never share your info. Most offers come back within the hour.</div>
+    </form>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="s" style="background:var(--bg2)">
+  <div class="wrap">
+    <h2 class="kicker center" style="margin-bottom:40px">Quick <span class="gold-text">Answers</span></h2>
+    <div class="faq">
+      <details open><summary>Is it legal to sell an inherited gun?</summary><p>Yes, and it's the cleanest way to be done with it. Selling to a licensed FFL documents the transfer, so the gun's no longer yours.</p></details>
+      <details><summary>What do I bring?</summary><p>Just the firearm and a valid photo ID. You don't need a receipt or any paperwork.</p></details>
+      <details><summary>What if it might be loaded?</summary><p>Leave it exactly as is, put it in your trunk, and call us first. We'll walk you through it, and we handle loaded guns safely at no charge.</p></details>
+      <details><summary>Will I get lowballed?</summary><p>No. We show you recent real sale prices and put the offer in writing. There's no obligation, so you can walk away anytime.</p></details>
+      <details><summary>Can you come to me?</summary><p>For estates and larger collections, yes. We appraise on site and pay you there.</p></details>
+      <details><summary>Do you do FFL transfers?</summary><p>No, we don't handle transfers. We focus on buying, selling, and trading guns.</p></details>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL -->
+<section class="final">
+  <div class="wrap">
+    <div class="eyebrow" style="display:block;margin-bottom:10px">Trusted. Local. Licensed.</div>
+    <h2>Got a Gun to <span class="gold-text">Sell?</span></h2>
+    <p>Text a photo, give us a call, or stop by. Like the offer? You walk out with cash today.</p>
+    <div class="ctas">
+      <a class="btn gold" href="#sell">Get My Cash Offer →</a>
+      <a class="btn ghost" href="tel:+15026391130"><svg class="ic"><use href="#i-phone"/></svg> Call Dillon</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="fcols">
+      <div>
+        <div class="logo">GUN GEEK <span>502</span></div>
+        <b>1810 Outer Loop, Louisville, KY 40219</b><br>
+        (502) 639-1130 · Licensed FFL<br>
+        Serving Louisville and Southern Indiana
+      </div>
+      <div class="fnav">
+        <a href="/terms">Terms of Service</a>
+        <a href="/privacy">Privacy Policy</a>
+        <a href="/support">Support</a>
+        <a href="/careers">Careers</a>
+        <a href="#">Cookie Preferences</a>
+      </div>
+    </div>
+    <div class="disc">
+      The results and figures mentioned on this site are examples and are not a guarantee. Individual results vary based on the firearm, its condition, and current market value.<br><br>
+      This site is not a part of the Facebook website or Facebook Inc, and it is not endorsed by Facebook in any way.<br><br>
+      ©2026 Gun Geek 502 LLC. All Rights Reserved.
+    </div>
+  </div>
+</footer>
+
+<div class="sticky">
+  <a class="btn ghost" href="sms:+15026391130"><svg class="ic"><use href="#i-chat"/></svg> Text a Photo</a>
+  <a class="btn gold" href="tel:+15026391130"><svg class="ic"><use href="#i-phone"/></svg> Call Dillon</a>
+</div>
+
+<script>
+  (function(){
+    var hero=document.getElementById('heroType');
+    var form=document.getElementById('formType');
+    document.querySelectorAll('a[href="#sell"]').forEach(function(a){
+      a.addEventListener('click',function(){ if(hero&&form){ form.value=hero.value; } });
+    });
+  })();
+</script>
+
+</body>
+</html>
