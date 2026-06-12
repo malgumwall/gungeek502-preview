@@ -52,7 +52,14 @@
   .navlinks a:hover{color:var(--gold)}
   .nav .right{display:flex;align-items:center;gap:14px}
   .nav .phone{color:#fff;font-family:'Oswald';font-weight:700;font-size:1.05rem;white-space:nowrap}
-  @media(max-width:880px){ .navlinks{display:none} }
+  .hamburger{display:none;flex-direction:column;justify-content:center;gap:5px;width:44px;height:40px;background:transparent;border:1.5px solid #3a3a40;border-radius:8px;cursor:pointer;padding:0 10px}
+  .hamburger span{display:block;height:2px;background:#fff;border-radius:2px;transition:.2s}
+  .mobilemenu{display:none;flex-direction:column;background:#0b0b0d;border-bottom:1px solid var(--gold-deep)}
+  .mobilemenu a{padding:15px 24px;font-family:'Oswald';font-weight:600;text-transform:uppercase;letter-spacing:1px;font-size:.92rem;color:#e6e0d4;border-top:1px solid #1a1a1c}
+  .mobilemenu a:hover{color:var(--gold)}
+  .mobilemenu a.mm-cta{color:#1a1206;background:var(--goldgrad);text-align:center;border:none}
+  .mobilemenu.open{display:flex}
+  @media(max-width:880px){ .navlinks{display:none} .hamburger{display:flex} .headercta{display:none} }
   @media(max-width:680px){ .nav .phone{display:none} }
 
   /* HERO */
@@ -193,6 +200,8 @@
     .hcol{padding-bottom:8px}
     .grid3,.steps,.segs{grid-template-columns:1fr}
     .segs{grid-template-columns:1fr 1fr}
+    .invrow{flex-direction:column;text-align:center;align-items:center;gap:18px}
+    .invrow p{margin-left:auto;margin-right:auto}
     .kicker,.final h2{font-size:2.1rem}
     section.s{padding:54px 0}
     .sticky{display:flex}
@@ -228,9 +237,18 @@
     </nav>
     <div class="right">
       <a class="phone" href="tel:+15026391130">(502) 639-1130</a>
-      <a class="btn gold" href="#sell" style="padding:11px 20px;font-size:.9rem">Get Cash Offer</a>
+      <a class="btn gold headercta" href="#sell" style="padding:11px 20px;font-size:.9rem">Get Cash Offer</a>
+      <button class="hamburger" id="hamburger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
     </div>
   </div>
+  <nav class="mobilemenu" id="mobilemenu">
+    <a href="#offer">Home</a>
+    <a href="https://armslist.com/store/13160/gun-geek-502" target="_blank" rel="noopener">Current Inventory</a>
+    <a href="/blog">Blog</a>
+    <a href="https://facebook.com/profile.php?id=61576962867131" target="_blank" rel="noopener">Facebook</a>
+    <a href="tel:+15026391130">Call (502) 639-1130</a>
+    <a href="#sell" class="mm-cta">Get My Cash Offer →</a>
+  </nav>
 </header>
 
 <!-- HERO -->
@@ -457,6 +475,11 @@
     document.querySelectorAll('a[href="#sell"]').forEach(function(a){
       a.addEventListener('click',function(){ if(hero&&form){ form.value=hero.value; } });
     });
+    var hb=document.getElementById('hamburger'), mm=document.getElementById('mobilemenu');
+    if(hb&&mm){
+      hb.addEventListener('click',function(){ var open=mm.classList.toggle('open'); hb.setAttribute('aria-expanded',open); });
+      mm.querySelectorAll('a').forEach(function(a){ a.addEventListener('click',function(){ mm.classList.remove('open'); hb.setAttribute('aria-expanded','false'); }); });
+    }
   })();
 </script>
 
