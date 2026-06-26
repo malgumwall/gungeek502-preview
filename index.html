@@ -383,7 +383,12 @@
   <div class="wrap center">
     <h2 class="kicker">Sell Your <span class="gold-text">Guns</span></h2>
     <p class="lead">Tell us what you have, and we'll get you a fair cash offer. Fast and free.</p>
-    <form class="formwrap" onsubmit="return false">
+    <form class="formwrap" action="https://formsubmit.co/maskedhauls@gmail.com" method="POST" enctype="multipart/form-data">
+      <input type="hidden" name="_subject" value="New gun-selling lead - Gun Geek 502 website">
+      <input type="hidden" name="_template" value="table">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_next" value="https://gungeek502.com/thanks.html">
+      <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
       <div class="frow">
         <div class="field"><label for="fname">First Name</label><input id="fname" name="first_name" type="text" placeholder="First name"></div>
         <div class="field"><label for="lname">Last Name</label><input id="lname" name="last_name" type="text" placeholder="Last name"></div>
@@ -404,8 +409,8 @@
         </select>
       </div>
       <div class="field full" style="margin-top:14px"><label for="photo">Add a Photo (optional, it helps)</label><input id="photo" name="photo" type="file"></div>
-      <label class="consent"><input type="checkbox"> <span>I consent to receive SMS notifications, alerts, and occasional marketing messages from Gun Geek 502. Message frequency varies. Message and data rates may apply. Text HELP to (502) 639-1130 for help. Reply STOP to unsubscribe at any time.</span></label>
-      <label class="consent"><input type="checkbox"> <span>I consent to receive non marketing text messages from Gun Geek 502 LLC about order updates, appointment reminders, and similar. Message and data rates may apply.</span></label>
+      <label class="consent"><input type="checkbox" name="SMS marketing consent" value="Yes"> <span>I consent to receive SMS notifications, alerts, and occasional marketing messages from Gun Geek 502. Message frequency varies. Message and data rates may apply. Text HELP to (502) 639-1130 for help. Reply STOP to unsubscribe at any time.</span></label>
+      <label class="consent"><input type="checkbox" name="SMS transactional consent" value="Yes"> <span>I consent to receive non marketing text messages from Gun Geek 502 LLC about order updates, appointment reminders, and similar. Message and data rates may apply.</span></label>
       <button class="btn gold" type="submit">Get My Cash Offer</button>
       <div class="formnote">No obligation, and we never share your info. Most offers come back within the hour.</div>
     </form>
@@ -449,11 +454,9 @@
         Call or Text: (502) 639-1130
       </div>
       <div class="fnav">
-        <a href="/terms">Terms of Service</a>
-        <a href="/privacy">Privacy Policy</a>
-        <a href="/support">Support</a>
-        <a href="/careers">Careers</a>
-        <a href="#">Cookie Preferences</a>
+        <a href="terms.html">Terms of Service</a>
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="tel:+15026391130">Support</a>
       </div>
     </div>
     <div class="disc">
