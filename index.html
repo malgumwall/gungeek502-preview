@@ -47,11 +47,11 @@
 
   /* HEADER */
   header{position:sticky;top:0;z-index:40;background:rgba(10,10,11,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
-  .nav{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;height:78px;gap:18px}
+  .nav{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;height:92px;gap:18px}
   .logo{font-family:'Montserrat';font-weight:900;font-size:1.75rem;letter-spacing:1px;color:#fff;white-space:nowrap;justify-self:start}
   .logo span{color:var(--gold)}
-  .logoimg{height:48px;width:auto;display:block}
-  .fcols .logoimg{height:42px;margin-bottom:10px}
+  .logoimg{height:66px;width:auto;display:block}
+  .fcols .logoimg{height:58px;margin-bottom:12px}
   .navlinks{display:flex;gap:32px;justify-self:center}
   .navlinks a{font-family:'Montserrat';font-weight:700;text-transform:uppercase;letter-spacing:2.5px;font-size:.82rem;color:#d8d2c7}
   .navlinks a:hover{color:var(--gold)}
@@ -65,7 +65,7 @@
   .mobilemenu a.mm-cta{color:#1a1206;background:var(--gold);text-align:center;border:none}
   .mobilemenu.open{display:flex}
   @media(max-width:880px){ .navlinks{display:none} .hamburger{display:flex} .headercta{display:none} }
-  @media(max-width:680px){ .nav .phone{display:none} }
+  @media(max-width:680px){ .nav .phone{display:none} .logoimg{height:54px} }
 
   /* HERO */
   .hero{position:relative;overflow:hidden;padding:64px 0 0;background:radial-gradient(75% 85% at 26% 42%,#16161a 0%,#0a0a0b 60%)}
